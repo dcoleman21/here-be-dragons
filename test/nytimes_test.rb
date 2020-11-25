@@ -27,7 +27,7 @@ class NytimesTest < Minitest::Test
 
   def test_it_can_get_all_stories_with_subsection_of_politics
     #Set your code to the local variable, "result"
-    result = @hash[:results].find_all do |result|
+    result = @hash[:results].select do |result|
       result[:subsection] == "Politics"
     end
 
@@ -38,5 +38,4 @@ class NytimesTest < Minitest::Test
     assert_equal "Conspiracy Theories Made Alex Jones Very Rich. They May Bring Him Down.",
       result.last[:title]
   end
-
 end
